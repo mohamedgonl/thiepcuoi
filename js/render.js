@@ -48,7 +48,7 @@
   function buildAlbum(files) {
     var stage = $('#album-stage'), dots = $('#album-dots'), thumbs = $('#lightbox-thumbs'), count = $('#lightbox-count');
     if (!stage) return;
-    var urls = (files || []).map(function (n) { return 'media/album/' + n; });
+    var urls = (files || []).map(function (n) { return SB + 'media/album/' + n; });
     if (!urls.length) { var sec = stage.closest('.overflow-x-clip'); if (sec) sec.style.display = 'none'; return; }
     stage.innerHTML = ''; if (dots) dots.innerHTML = ''; if (thumbs) thumbs.innerHTML = '';
     urls.forEach(function (url, i) {
@@ -66,10 +66,12 @@
     });
     if (count) count.textContent = '1 / ' + urls.length;
     var lb = $('#lightbox-image'); if (lb) lb.src = urls[0];
+    // Nhiều ảnh thì ẩn hàng chấm cho gọn (vẫn dùng mũi tên / vuốt / lightbox)
+    if (dots && urls.length > 14) dots.style.display = 'none';
   }
 
-  function setCover() { var el = $('#cover-photo'); if (el && cfg.cover) el.src = 'media/cover/' + cfg.cover; }
-  function setMusic() { var a = $('audio'); if (a && cfg.music) a.src = 'media/music/' + cfg.music; }
+  function setCover() { var el = $('#cover-photo'); if (el && cfg.cover) el.src = SB + 'media/cover/' + cfg.cover; }
+  function setMusic() { var a = $('audio'); if (a && cfg.music) a.src = SB + 'media/music/' + cfg.music; }
 
   // ----- Lịch trình ngày cưới -----
   var ICONS = { camera: 'camera.webp', cake: 'cake.webp', cook: 'cook.webp' };

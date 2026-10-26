@@ -1,7 +1,7 @@
 /* =========================================================
    NỘI DUNG RIÊNG CHO ROUTE NÀY (Nhà Trai)
-   Sửa trực tiếp các giá trị bên dưới. Ảnh để trong media/album,
-   media/cover, media/music của CHÍNH thư mục route này.
+   Sửa trực tiếp các giá trị bên dưới. Ảnh/nhạc nằm trong thư mục media/ DÙNG CHUNG ở gốc (../media).
+   Chỉ cần liệt kê tên file muốn dùng ở album/cover/music bên dưới.
    ========================================================= */
 window.WEDDING = {
   side: "Nhà Trai",
@@ -38,8 +38,8 @@ window.WEDDING = {
     { time: "20:30", label: "Kết thúc tiệc" }
   ],
 
-  // ----- Tài nguyên (tên file trong media/ của route này) -----
-  album: ["01.webp","02.webp","03.webp","04.webp","05.webp","06.webp","07.webp"],
+  // ----- Tài nguyên: chọn file từ thư mục media/ dùng chung (../media) -----
+  album: ["01.webp","02.webp","03.webp","04.webp","05.webp","06.webp","07.webp","08.webp","09.webp","10.webp","11.webp","12.webp","13.webp","14.webp","15.webp","16.webp","17.webp","18.webp","19.webp","20.webp","21.webp","22.webp","23.webp","24.webp","25.webp","26.webp","27.webp","28.webp","29.webp","30.webp","31.webp","32.webp","33.webp"],
   cover: "cover.webp",
   music: "nhac-nen.mp3"
 };

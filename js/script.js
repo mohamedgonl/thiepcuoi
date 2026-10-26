@@ -120,12 +120,14 @@
   function render() {
     slides.forEach(function (el, i) {
       var d = offset(i);
-      var p = POSE[Math.abs(d)];
+      var ad = Math.abs(d);
+      var p = POSE[Math.min(ad, 3)];            // nhiều ảnh: dùng pose xa nhất cho ảnh ở xa
       var sign = d > 0 ? 1 : d < 0 ? -1 : 0;
       el.style.transform = 'translateX(' + sign * p[0] + '%) translateZ(' + p[1] + 'px) rotateY(' +
         sign * p[2] + 'deg) scale(' + p[3] + ')';
-      el.style.opacity = p[4];
-      el.style.zIndex = p[5];
+      el.style.opacity = ad > 3 ? 0 : p[4];     // ảnh quá xa thì ẩn hẳn
+      el.style.zIndex = p[5] - ad;
+      el.style.pointerEvents = ad > 1 ? 'none' : '';
       el.classList.toggle('ring-2', d === 0);
       el.classList.toggle('ring-white/30', d === 0);
     });
