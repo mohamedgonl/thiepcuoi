@@ -403,12 +403,30 @@
     });
   }
 
+  // Co TỪNG phần tử cho vừa đúng ô chứa nó (dùng cho tên Ông Bà theo cột)
+  function fitEach(sel, maxSize, minSize) {
+    slice(document.querySelectorAll(sel)).forEach(function (el) {
+      var avail = (el.parentElement && el.parentElement.clientWidth) || 0;
+      if (avail < 10) return;
+      avail -= 2;
+      var cs = getComputedStyle(el);
+      el.style.whiteSpace = 'nowrap';
+      var size = maxSize, g = 0;
+      while (size > minSize && measureWidth(el.textContent, cs, size) > avail && g < 400) {
+        size -= 1; g++;
+      }
+      el.style.setProperty('font-size', size + 'px', 'important');
+    });
+  }
+
   function run() {
     var vw = window.innerWidth;
     var max = vw >= 1024 ? 92 : vw >= 768 ? 72 : 56;
     var min = vw >= 1024 ? 30 : 20;
     fitGroup(slice(document.querySelectorAll('.pc-frame header p.cd-script-name')), max, min);
     fitGroup(slice(document.querySelectorAll('.pc-frame h3.whitespace-nowrap')), max, min);
+    // Tên Ông Bà: giữ cỡ 16px nếu vừa, tự co xuống tối thiểu 11px cho mỗi cột
+    fitEach('.pc-frame .grid span[class*="overflow-wrap:anywhere"]', 16, 11);
   }
 
   // Bảo đảm font Great Vibes đã tải xong rồi mới đo
@@ -429,4 +447,14 @@
   setTimeout(runAfterFont, 300);
   setTimeout(runAfterFont, 900);
   setTimeout(runAfterFont, 1600);
+
+  // Chạy lại khi mở thiệp (lúc này #invitation mới hiển thị, mới đo được bề rộng)
+  var openBtn = document.getElementById('open-invitation');
+  if (openBtn) {
+    openBtn.addEventListener('click', function () {
+      setTimeout(runAfterFont, 950);
+      setTimeout(runAfterFont, 1600);
+      setTimeout(runAfterFont, 2600);
+    });
+  }
 })();

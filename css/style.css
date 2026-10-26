@@ -4771,3 +4771,10 @@ button:disabled {
 /* ---- Sổ lưu bút: khoá kích thước cố định để không tràn khỏi ảnh nền giấy ---- */
 .pc-frame #wish-form { max-width: 380px !important; }
 .pc-frame #wish-list { max-width: 440px !important; }
+
+/* ---- Tên Ông Bà (bố mẹ) trong thẻ lễ cưới: giữ trên 1 dòng ---- */
+.pc-frame .grid span[class*="overflow-wrap:anywhere"] {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
