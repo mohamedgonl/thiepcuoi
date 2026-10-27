@@ -52,7 +52,7 @@ window.WEDDING = {
   ],
   "album": [
     "01.webp",
-    "02.webp",
+    // "02.webp",
     "03.webp",
     "04.webp",
     "05.webp",
@@ -85,6 +85,6 @@ window.WEDDING = {
     "32.webp",
     "33.webp"
   ],
-  "cover": "04.webp",
+  "cover": "01.webp",
   "music": "nhac-nen.mp3"
 };

@@ -429,7 +429,8 @@
     var max = vw >= 1024 ? 92 : vw >= 768 ? 72 : 56;
     var min = vw >= 1024 ? 30 : 20;
     fitGroup(slice(document.querySelectorAll('.pc-frame header p.cd-script-name')), max, min);
-    fitGroup(slice(document.querySelectorAll('.pc-frame h3.whitespace-nowrap')), max, min);
+    // Tên trong thẻ lễ cưới nhỏ hơn 1 chút để không bị hình hoa che mất
+    fitGroup(slice(document.querySelectorAll('.pc-frame h3.whitespace-nowrap')), Math.round(max * 0.8), min);
     // Tên Ông Bà 2 bên: CÙNG 1 cỡ, luôn 1 dòng (tối đa 16px, co đều tới 10px)
     fitUniform('.pc-frame .grid span[class*="overflow-wrap:anywhere"]', 16, 10);
   }
