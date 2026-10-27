@@ -37,8 +37,8 @@ window.WEDDING = {
   "venue": {
     "heading": "Bữa cơm thân mật tổ chức tại",
     "address": "Nhà văn hoá thôn Bảo Tháp\nxã Đông Cứu, tỉnh Bắc Ninh",
-    "mapQuery": "21.0703207,106.1665891",
-    "directionsQuery": "21.0703207,106.1665891"
+    "mapQuery": "21.0702071,106.1670482",
+    "directionsQuery": "21.0702071,106.1670482"
   },
   "timeline": [
     {
