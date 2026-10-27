@@ -48,7 +48,8 @@ window.WEDDING = {
     },
     {
       "time": "09:00",
-      "label": "Lễ Vu Quy (27/11)"
+      "label": "Lễ Vu Quy (27/11)",
+      "icon": "camera"
     },
   ],
   "album": [

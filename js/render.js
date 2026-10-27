@@ -173,6 +173,12 @@
         if (k.length === 3) [k[2], k[1], k[0]].forEach(function (x) { e.appendChild(x); });
       }
     });
+    // Bố mẹ: đảo 2 cột (nhà gái sang trái, nhà trai sang phải)
+    var grid = document.querySelector('.pc-frame [class*="grid-cols-[1fr_auto_1fr]"]');
+    if (grid) {
+      var g = Array.prototype.slice.call(grid.children);
+      if (g.length === 3) [g[2], g[1], g[0]].forEach(function (x) { grid.appendChild(x); });
+    }
   }
 
   function run() {

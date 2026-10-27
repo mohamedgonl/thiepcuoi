@@ -42,7 +42,8 @@ window.WEDDING = {
   "timeline": [
     {
       "time": "10:30",
-      "label": "Lễ Thành Hôn"
+      "label": "Lễ Thành Hôn",
+      "icon": "camera"
     },
     {
       "time": "16:00",
