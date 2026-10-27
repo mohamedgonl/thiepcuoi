@@ -292,9 +292,10 @@
     });
 
     var SUGGEST = [
-      'Chúc hai bạn trăm năm hạnh phúc, bên nhau đến đầu bạc răng long!',
-      'Chúc mừng ngày trọng đại của hai bạn, luôn yêu thương và thấu hiểu nhau nhé!',
-      'Chúc hai bạn mãi mãi hạnh phúc và sớm có tin vui!'
+      'Chúc mừng hai bạn nhé! Trăm năm hạnh phúc, yêu thương nhau thật nhiều.',
+      'Mừng đám cưới! Chúc hai bạn về chung một nhà luôn đầm ấm, sớm có tin vui.',
+      'Chúc hai bạn mãi mặn nồng như ngày đầu, trên thuận dưới hòa nhé!',
+      'Hạnh phúc nha hai đứa! Nhớ nhường nhịn nhau, sống với nhau thật bền thật lâu.'
     ];
     var wand = $('button[type="button"]', form);
     if (wand) {
@@ -431,8 +432,9 @@
     fitGroup(slice(document.querySelectorAll('.pc-frame header p.cd-script-name')), max, min);
     // Tên trong thẻ lễ cưới nhỏ hơn 1 chút để không bị hình hoa che mất
     fitGroup(slice(document.querySelectorAll('.pc-frame h3.whitespace-nowrap')), Math.round(max * 0.8), min);
-    // Tên Ông Bà 2 bên: CÙNG 1 cỡ, luôn 1 dòng (tối đa 16px, co đều tới 10px)
-    fitUniform('.pc-frame .grid span[class*="overflow-wrap:anywhere"]', 16, 10);
+    // Tên Ông Bà 2 bên: CÙNG 1 cỡ, luôn 1 dòng. To hơn: PC nhiều, mobile ít.
+    var pmax = vw >= 1024 ? 28 : vw >= 768 ? 22 : 15;
+    fitUniform('.pc-frame .grid span[class*="overflow-wrap:anywhere"]', pmax, 11);
   }
 
   // Bảo đảm font Great Vibes đã tải xong rồi mới đo

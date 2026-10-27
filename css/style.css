@@ -4779,7 +4779,8 @@ button:disabled {
   word-break: keep-all;
 }
 
-/* ---- Thu hẹp khoảng cách 2 cột Ông Bà trên mobile để tên to hơn mà vẫn 1 dòng ---- */
+/* ---- Nới rộng 2 cột Ông Bà (full width + giảm khoảng cách giữa) để tên to hơn mà vẫn 1 dòng ---- */
+.pc-frame [class*="grid-cols-[1fr_auto_1fr]"] { width: 100%; column-gap: 1.25rem !important; }
 @media (max-width: 480px) {
-  .pc-frame [class*="grid-cols-[1fr_auto_1fr]"] { column-gap: 14px !important; }
+  .pc-frame [class*="grid-cols-[1fr_auto_1fr]"] { column-gap: 10px !important; }
 }
