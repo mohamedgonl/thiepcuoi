@@ -41,14 +41,14 @@ window.WEDDING = {
   },
   "timeline": [
     {
-      "time": "09:00",
-      "label": "Lễ Vu Quy (27/11)"
-    },
-    {
       "time": "16:00",
       "label": "Bữa cơm thân mật (26/11)",
       "icon": "cake"
-    }
+    },
+    {
+      "time": "09:00",
+      "label": "Lễ Vu Quy (27/11)"
+    },
   ],
   "album": [
     "01.webp",
