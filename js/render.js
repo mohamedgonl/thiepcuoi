@@ -70,7 +70,7 @@
     if (dots && urls.length > 14) dots.style.display = 'none';
   }
 
-  function setCover() { var el = $('#cover-photo'); if (el && cfg.cover) el.src = SB + 'media/cover/' + cfg.cover; }
+  function setCover() { var el = $('#cover-photo'); if (el && cfg.cover) el.src = SB + 'media/album/' + cfg.cover; }
   function setMusic() { var a = $('audio'); if (a && cfg.music) a.src = SB + 'media/music/' + cfg.music; }
 
   // ----- Lịch trình ngày cưới -----
