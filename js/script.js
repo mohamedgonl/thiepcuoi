@@ -406,19 +406,22 @@
   }
 
   // Co TỪNG phần tử cho vừa đúng ô chứa nó (dùng cho tên Ông Bà theo cột)
-  function fitEach(sel, maxSize, minSize) {
-    slice(document.querySelectorAll(sel)).forEach(function (el) {
-      var avail = (el.parentElement && el.parentElement.clientWidth) || 0;
-      if (avail < 10) return;
-      avail -= 2;
-      var cs = getComputedStyle(el);
-      el.style.whiteSpace = 'nowrap';
-      var size = maxSize, g = 0;
-      while (size > minSize && measureWidth(el.textContent, cs, size) > avail && g < 400) {
-        size -= 1; g++;
-      }
-      el.style.setProperty('font-size', size + 'px', 'important');
-    });
+  // Co ĐỒNG ĐỀU: tất cả phần tử cùng 1 cỡ = cỡ lớn nhất mà MỌI phần tử
+  // vẫn vừa đúng cột của nó (tên dài nhất quyết định). Luôn nằm 1 dòng.
+  function fitUniform(sel, maxSize, minSize) {
+    var els = slice(document.querySelectorAll(sel));
+    if (!els.length) return;
+    els.forEach(function (el) { el.style.whiteSpace = 'nowrap'; });
+    function allFit(sz) {
+      return els.every(function (el) {
+        var avail = (el.parentElement && el.parentElement.clientWidth) || 0;
+        if (avail < 10) return true; // cột chưa đo được -> bỏ qua
+        return measureWidth(el.textContent, getComputedStyle(el), sz) <= avail - 2;
+      });
+    }
+    var size = maxSize, g = 0;
+    while (size > minSize && !allFit(size) && g < 400) { size -= 1; g++; }
+    els.forEach(function (el) { el.style.setProperty('font-size', size + 'px', 'important'); });
   }
 
   function run() {
@@ -427,8 +430,8 @@
     var min = vw >= 1024 ? 30 : 20;
     fitGroup(slice(document.querySelectorAll('.pc-frame header p.cd-script-name')), max, min);
     fitGroup(slice(document.querySelectorAll('.pc-frame h3.whitespace-nowrap')), max, min);
-    // Tên Ông Bà: giữ cỡ 16px nếu vừa, tự co xuống tối thiểu 11px cho mỗi cột
-    fitEach('.pc-frame .grid span[class*="overflow-wrap:anywhere"]', 16, 11);
+    // Tên Ông Bà 2 bên: CÙNG 1 cỡ, luôn 1 dòng (tối đa 16px, co đều tới 10px)
+    fitUniform('.pc-frame .grid span[class*="overflow-wrap:anywhere"]', 16, 10);
   }
 
   // Bảo đảm font Great Vibes đã tải xong rồi mới đo

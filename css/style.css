@@ -4778,3 +4778,8 @@ button:disabled {
   overflow-wrap: normal;
   word-break: keep-all;
 }
+
+/* ---- Thu hẹp khoảng cách 2 cột Ông Bà trên mobile để tên to hơn mà vẫn 1 dòng ---- */
+@media (max-width: 480px) {
+  .pc-frame [class*="grid-cols-[1fr_auto_1fr]"] { column-gap: 14px !important; }
+}

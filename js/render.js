@@ -144,9 +144,20 @@
 
   function loadScript(src) { var s = document.createElement('script'); s.src = src; document.body.appendChild(s); }
 
+  function hideIfEmpty() {
+    // Ẩn khối "Đón khách / Khai tiệc" nếu không khai báo giờ welcome
+    var wb = $('[data-welcomeblock]');
+    if (wb && (!cfg.reception || !cfg.reception.welcome)) wb.style.display = 'none';
+    // Ẩn mục Lịch trình nếu không có dòng nào
+    if (!(cfg.timeline && cfg.timeline.length)) {
+      var ol = $('[data-timeline]'); var sec = ol && ol.closest('section');
+      if (sec) sec.style.display = 'none';
+    }
+  }
+
   function run() {
     try {
-      bindText(); buildTimeline(); buildCalendar(); setLinks(); buildGift();
+      bindText(); buildTimeline(); buildCalendar(); setLinks(); buildGift(); hideIfEmpty();
       buildAlbum(cfg.album); setCover(); setMusic();
     } catch (e) { /* vẫn nạp script để trang không vỡ */ }
     loadScript(SB + 'js/script.js');
