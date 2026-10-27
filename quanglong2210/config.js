@@ -9,7 +9,7 @@ window.WEDDING = {
   "ceremony": {
     "heading": "THÔNG TIN LỄ THÀNH HÔN",
     "announce": "TRÂN TRỌNG BÁO TIN\nLỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
-    "venueLine": "LỄ THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI\nSố 28, Nguyễn Quyền 4, phường Võ Cường, TP. Bắc Ninh",
+    "venueLine": "LỄ THÀNH HÔN ĐƯỢC TỔ CHỨC TẠI\nSố 28, Nguyễn Quyền 4, phường Võ Cường, TP. Bắc Ninh",
     "timeLabel": "VÀO LÚC 10:30",
     "weekday": "THỨ SÁU",
     "day": "27",
