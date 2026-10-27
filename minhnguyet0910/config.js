@@ -6,6 +6,7 @@
    ============================================================ */
 window.WEDDING = {
   "side": "Nhà Gái",
+  "brideFirst": true,
   "ceremony": {
     "heading": "THÔNG TIN LỄ VU QUY",
     "announce": "TRÂN TRỌNG BÁO TIN\nLỄ VU QUY CỦA CON CHÚNG TÔI",

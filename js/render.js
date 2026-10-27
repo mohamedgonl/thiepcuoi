@@ -155,10 +155,30 @@
     }
   }
 
+  // Thiệp nhà gái: đưa tên cô dâu lên trên, chú rể xuống dưới (đảo thứ tự khối tên).
+  // Phần bố mẹ (nhà gái phải, nhà trai trái) giữ nguyên.
+  function reorderBrideFirst() {
+    if (!cfg.brideFirst) return;
+    // Khối tên trong thẻ lễ: [tên1, vai1, &, tên2, vai2] -> [tên2, vai2, &, tên1, vai1]
+    var h3 = document.querySelector('.pc-frame h3.whitespace-nowrap');
+    if (h3 && h3.parentElement) {
+      var cb = h3.parentElement, k = Array.prototype.slice.call(cb.children);
+      if (k.length === 5) [k[3], k[4], k[2], k[0], k[1]].forEach(function (x) { cb.appendChild(x); });
+    }
+    // Tên ở "Save The Date" và màn mở thiệp: [tên1, &, tên2] -> [tên2, &, tên1]
+    ['.cd-name-wrap', '#intro h1'].forEach(function (sel) {
+      var e = document.querySelector(sel);
+      if (e) {
+        var k = Array.prototype.slice.call(e.children);
+        if (k.length === 3) [k[2], k[1], k[0]].forEach(function (x) { e.appendChild(x); });
+      }
+    });
+  }
+
   function run() {
     try {
       bindText(); buildTimeline(); buildCalendar(); setLinks(); buildGift(); hideIfEmpty();
-      buildAlbum(cfg.album); setCover(); setMusic();
+      buildAlbum(cfg.album); setCover(); setMusic(); reorderBrideFirst();
     } catch (e) { /* vẫn nạp script để trang không vỡ */ }
     loadScript(SB + 'js/script.js');
   }
