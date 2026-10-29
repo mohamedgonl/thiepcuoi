@@ -9,7 +9,7 @@ window.WEDDING = {
   "brideFirst": true,
   "ceremony": {
     "heading": "THÔNG TIN LỄ VU QUY",
-    "announce": "TRÂN TRỌNG BÁO TIN\nLỄ VU QUY CỦA CON CHÚNG TÔI",
+    "announce": "TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH THAM DỰ\nLỄ VU QUY CỦA CON CHÚNG TÔI",
     "venueLine": "LỄ VU QUY ĐƯỢC TỔ CHỨC TẠI\nNhà văn hoá thôn Bảo Tháp, xã Đông Cứu, tỉnh Bắc Ninh",
     "timeLabel": "VÀO LÚC 09:00",
     "weekday": "THỨ SÁU",
