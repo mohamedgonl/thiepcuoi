@@ -8,7 +8,7 @@ window.WEDDING = {
   "side": "Nhà Trai",
   "ceremony": {
     "heading": "THÔNG TIN LỄ THÀNH HÔN",
-    "announce": "TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH THAM DỰ\nLỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
+    "announce": "TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH THAM DỰ\nLỄ THÀNH HÔN",
     "venueLine": "LỄ THÀNH HÔN ĐƯỢC TỔ CHỨC TẠI\nSố 28, Nguyễn Quyền 4, phường Võ Cường, TP. Bắc Ninh",
     "timeLabel": "VÀO LÚC 10:30",
     "weekday": "THỨ SÁU",
